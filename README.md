@@ -35,7 +35,7 @@ This design demonstrates:
 ---
 
 ## Project Structure
-
+```bash
 ├── app/ # FastAPI backend
 │ ├── main.py
 │ ├── gemini_client.py
@@ -46,6 +46,7 @@ This design demonstrates:
 ├── requirements.txt
 ├── .env.example
 └── README.md
+```
 
 ---
 
