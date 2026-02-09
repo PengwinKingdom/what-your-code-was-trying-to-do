@@ -2,6 +2,7 @@ import os
 import json
 from dotenv import load_dotenv
 from google import genai
+from google.genai import types
 
 load_dotenv()
 
@@ -11,11 +12,15 @@ def call_gemini(prompt:str,model:str="gemini-2.0-flash") -> dict:
     if not api_key:
         raise RuntimeError("Gemini API key not found. Please set GEMINI_API_KEY or GOOGLE_API_KEY in your environment variables.")
     
+
     client=genai.Client(api_key=api_key)
     
-    resp=client.model.generate_content(
+    resp=client.models.generate_content(
         model=model,
-        contents=prompt
+        contents=prompt,
+        config=types.GenerateContentConfig(
+            temperature=0.2,
+        ),
     )
     
     text=(resp.text or "").strip()
@@ -29,5 +34,5 @@ def call_gemini(prompt:str,model:str="gemini-2.0-flash") -> dict:
         end=text.rfind("}")
         if start!=-1 and end!=-1 and end>start:
             return json.loads(text[start:end+1])
-        raise
+        raise RuntimeError(f"Model did not return valid JSON: {text[:200]}...")
 

@@ -7,9 +7,9 @@ Do NOT explain syntax line by line.
 If the code is incomplete or ambiguous, DO NOT guess. Instead, ask 3–6 clarifying questions.
 
 INPUT
-- Language (may be unknown): {language}
+- Language (may be unknown): <<LANG>>
 - Code (max 150 lines):
-{code}
+<<CODE>>
 
 OUTPUT FORMAT (JSON only)
 If enough information:
