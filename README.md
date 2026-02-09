@@ -90,8 +90,7 @@ BACKEND_URL=http://127.0.0.1:8000
 ### 5. Run the backend (FastAPI)
 
 ```bash
-cd app
-uvicorn main:app --reload
+uvicorn app.main:app --reload
 ```
 
 Backend will run at
