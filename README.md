@@ -99,6 +99,10 @@ Backend will run at
 http://127.0.0.1:8000
 ```
 
+```bash
+http://127.0.0.1:8000/docs
+```
+
 ### 6. Run the frontend (Streamlit)
 
 ```bash
